@@ -32,7 +32,13 @@ class Fields{
         this.#name = name;
     }
 
-    serialize(){};
+    serialize(){
+        let newItem = {
+            name : this.name,
+            element : this.element.value
+        };
+        return newItem;
+    }
 }
 
 export { Fields };

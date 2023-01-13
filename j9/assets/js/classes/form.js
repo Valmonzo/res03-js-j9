@@ -21,19 +21,34 @@ class Form {
     addField(field) {
         this.#fields.push(field);
     }
-    submit() {}
+    submit() {
+      let txt =   JSON.stringify(this);
+      sessionStorage.setItem("form","txt");
+
+
+
+    }
 
 
     validate() {
-        console.log(this);
+        let subBtn = document.querySelector("fieldset button");
+        let errorForm = [];
         for (let i = 0; i < this.fields.length; i++) {
             let result = this.fields[i].validate();
 
-            if (result !== false) {
-                let subBtn = document.querySelector("fieldset button");
-                subBtn.classList.remove("disabled");
-                subBtn.removeAttribute("diabled");
+            if (result === false) {
+                errorForm.push(this.fields[i].errors)
             }
+        }
+
+        if(errorForm.length === 0) {
+        subBtn.classList.remove("disabled");
+                subBtn.removeAttribute("diabled");
+        }
+        else if(errorForm.length >= 1 ) {
+            subBtn.classList.add("disabled");
+            subBtn.setAttribute("disabled");
+
         }
     }
 
@@ -41,7 +56,17 @@ class Form {
 
 
 
-    toJSON() {}
+    toJSON() {
+        let item = {
+            data : []
+        };
+        for(let i = 0; i < this.fields.length; i++) {
+            item.data.push(serialize(this.fields[i]));
+        }
+
+       return JSON.stringify(item);
+
+    }
 }
 
 export { Form };

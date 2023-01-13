@@ -36,7 +36,9 @@ window.addEventListener("DOMContentLoaded", function(e){
 
     for(let i = 0 ; i < data.length ; i ++ ) {
         newForm.addField(data[i]);
-        data[i].element.addEventListener("change", newForm.validate);
+        data[i].element.addEventListener("change", function(){
+            newForm.validate();
+        });
 
     }
 
@@ -48,5 +50,6 @@ window.addEventListener("DOMContentLoaded", function(e){
         event.preventDefault();
 
         newForm.submit();
+        console.log("ok");
     })
 });

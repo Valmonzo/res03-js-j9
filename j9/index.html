@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Pizzeria</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
+    <body>
+        <main>
+            <form id="user-information">
+                <fieldset>
+                    <label for="firstname">Prénom <span>*</span></label>
+                    <input type="text" name="firstname" id="firstname" required />
+                </fieldset>
+                <fieldset>
+                    <label for="lastname">Nom <span>*</span></label>
+                    <input type="text" name="lastname" id="lastname" required />
+                </fieldset>
+                <fieldset>
+                    <label for="email">Email <span>*</span></label>
+                    <input type="email" name="email" id="email" required />
+                </fieldset>
+                <fieldset>
+                    <label for="password">Mot de passe <span>*</span></label>
+                    <input type="password" name="password" id="password" required />
+                </fieldset>
+                <fieldset>
+                    <label for="confirm-password">Confirmer le mot de passe <span>*</span></label>
+                    <input type="password" name="confirm-password" id="confirm-password" required />
+                </fieldset>
+                <fieldset>
+                    <button type="submit" class="disabled" disabled >Valider</button>
+                </fieldset>
+            </form>
+        </main>
+        <script type="module" src="assets/js/index.js"></script>
+    </body>
+</html>

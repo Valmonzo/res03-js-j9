@@ -1,0 +1,31 @@
+@import "libs/reset";
+
+/* VARS */
+@import "vars";
+
+/* LAYOUTS */
+@import "layouts/form";
+
+html {
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  width:100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: $dark-grey;
+  background-color: white;
+
+  main {
+    width:40vw;
+    height: 100vh;
+    margin:auto;
+    padding: 4rem 0;
+  }
+}
+
+.sr-only {
+  display: none;
+}

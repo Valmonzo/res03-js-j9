@@ -3,7 +3,7 @@ class Form {
     #submitted;
 
     constructor() {
-        this.#fields = []
+        this.#fields = [];
     }
 
     get fields() {
@@ -18,12 +18,30 @@ class Form {
         this.#submitted = submitted;
     }
 
-    addField(field){
+    addField(field) {
         this.#fields.push(field);
-    };
-    submit(){};
-    validate(){};
-    toJSON(){};
+    }
+    submit() {}
+
+
+    validate() {
+        console.log(this);
+        for (let i = 0; i < this.fields.length; i++) {
+            let result = this.fields[i].validate();
+
+            if (result !== false) {
+                let subBtn = document.querySelector("fieldset button");
+                subBtn.classList.remove("disabled");
+                subBtn.removeAttribute("diabled");
+            }
+        }
+    }
+
+
+
+
+
+    toJSON() {}
 }
 
 export { Form };

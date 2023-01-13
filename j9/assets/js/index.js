@@ -29,12 +29,15 @@ window.addEventListener("DOMContentLoaded", function(e){
         }
 
 
+
     }
 
     let newForm = new Form();
 
     for(let i = 0 ; i < data.length ; i ++ ) {
         newForm.addField(data[i]);
+        data[i].element.addEventListener("change", newForm.validate);
+
     }
 
 
